@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/ayushpan/swig_capi_cmake/build/hw.h
+
+/home/ayushpan/swig_capi_cmake/build/hw.i
+hw.h
+/home/ayushpan/swig_capi_cmake/build/hw.h
+typemaps.i
+/home/ayushpan/swig_capi_cmake/build/typemaps.i
+

@@ -1,0 +1,44 @@
+Wrapper code->Steps
+
+ayushpan@ayushpan-desktop:~/c-api$ ls
+hw_wrap.c  Readme.md  src  test.py
+ayushpan@ayushpan-desktop:~/c-api$ gcc -Isrc -fPIC $(pkg-config --cflags --libs python3) -c src/hw.c hw_wrap.c
+ayushpan@ayushpan-desktop:~/c-api$ ls
+hw.o  hw_wrap.c  hw_wrap.o  Readme.md  src  test.py
+ayushpan@ayushpan-desktop:~/c-api$ gcc -shared -fPIC -o hw.so hw.o hw_wrap.o
+ayushpan@ayushpan-desktop:~/c-api$ ls
+hw.o  hw.so  hw_wrap.c  hw_wrap.o  Readme.md  src  test.py
+ayushpan@ayushpan-desktop:~/c-api$ python3 test.py
+hw-->
+0.8414709848078965
+ayushpan@ayushpan-desktop:~/c-api$
+
+
+swig Wrapper code-> Steps
+
+ayushpan@ayushpan-desktop:~/swig_capi$ ls
+hw.i  Readme.md  src  test.py
+ayushpan@ayushpan-desktop:~/swig_capi$ swig -python -Isrc hw.i
+ayushpan@ayushpan-desktop:~/swig_capi$ ls
+hw.i  hw.py  hw_wrap.c  Readme.md  src  test.py
+ayushpan@ayushpan-desktop:~/swig_capi$ gcc -Isrc -fPIC $(pkg-config --cflags --libs python3) -c src/hw.c hw_wrap.c
+ayushpan@ayushpan-desktop:~/swig_capi$ ls
+hw.i  hw.o  hw.py  hw_wrap.c  hw_wrap.o  Readme.md  src  test.py
+ayushpan@ayushpan-desktop:~/swig_capi$ gcc -shared -fPIC -o _hw.so hw.o hw_wrap.o
+ayushpan@ayushpan-desktop:~/swig_capi$ ls
+hw.i  hw.o  hw.py  _hw.so  hw_wrap.c  hw_wrap.o  Readme.md  src  test.py
+ayushpan@ayushpan-desktop:~/swig_capi$ python3 test.py
+0.8414709848078965
+ayushpan@ayushpan-desktop:~/swig_capi$
+
+
+CMake_swig_wrapper->
+
+ayushpan@ayushpan-desktop:~/swig_capi_cmake$ ls
+build  test.py
+ayushpan@ayushpan-desktop:~/swig_capi_cmake$ cmake -c build/
+ayushpan@ayushpan-desktop:~/swig_capi_cmake$ make
+ayushpan@ayushpan-desktop:~/swig_capi_cmake$ python3 test.py
+
+
+

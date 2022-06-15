@@ -1,0 +1,5 @@
+/home/ayushpan/swig_capi_cmake/CMakeFiles/rebuild_cache.dir
+/home/ayushpan/swig_capi_cmake/CMakeFiles/edit_cache.dir
+/home/ayushpan/swig_capi_cmake/CMakeFiles/hw_swig_compilation.dir
+/home/ayushpan/swig_capi_cmake/CMakeFiles/hw.dir
+/home/ayushpan/swig_capi_cmake/CMakeFiles/hello.dir
